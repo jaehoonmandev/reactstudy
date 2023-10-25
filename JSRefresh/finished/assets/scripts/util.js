@@ -31,35 +31,74 @@
 //     return userName + message;
 // }
 
+//
+// //객체
+// let user = {
+//     name: 'Max',
+//     age: 27,
+//     //객체안에 함수를 선언한다.
+//     greet() {
+//         console.log(this.name); // this 키워드를 통해 객체 내의 변수 접근
+//     }
+// };
+// //점 표기법을 통해 객체에 접근한다.
+// console.log(user.name);
+// //객체의 함수 호출
+// user.greet();
+//
+// //클래스. 클래스명 시작은 대문자로.
+// class User {
+//     //생성자
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+//     greet(){
+//         console.log('Hi!');
+//     }
+// }
+//
+//
+// // 클래스는 인스턴스화가 이루어져야지 사용가능하다.
+// const user1 = new User("Manuel", 35);
+// console.log(user1);
+// user1.greet()
 
-//객체
-let user = {
-    name: 'Max',
-    age: 27,
-    //객체안에 함수를 선언한다.
-    greet() {
-        console.log(this.name); // this 키워드를 통해 객체 내의 변수 접근
-    }
-};
-//점 표기법을 통해 객체에 접근한다.
-console.log(user.name);
-//객체의 함수 호출
-user.greet();
 
-//클래스. 클래스명 시작은 대문자로.
-class User {
-    //생성자
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    greet(){
-        console.log('Hi!');
-    }
+//배열
+//배열은 어떤 자료형이라도 저장가능하다.(배열마저도)
+// const hobbies = ["Sports", "Coocking", "Reading"];
+// console.log(hobbies[0]); // 인덱스 접근자.
+//
+// //배열 메소드(map과 같은)
+// hobbies.push("Working");//배열 . 접근으로 기능을 이용할수 있다.
+//
+// //찾으려는 원소가 배열에 있는지 모든 배열요소와 비교한다,
+// //있다면 true를 반환하고 해당 요소의 위치를 가져온다.
+// const index = hobbies.findIndex((item) => {
+//     return item == 'Sports';
+// });
+//
+// // const index = hobbies
+// //     .findIndex((item) => item == 'Sports'); // {,} 제거가능
+//
+// //map 또한 모든 배열 원소에 대해 실행된다.
+// //모든 원소에 ! 추가하지만 원래의 배열에는 지장을 주지 않는다.
+// const editeHobbies = hobbies.map((item) => item + "!");
+//
+// // map은 어떤 유형의 원소든 다른 유형의 원소로 변환할 수 있다.
+// const editeHobbies = hobbies.map(
+//     (item) =>({
+//     text:item
+// }));
+
+//새로 반환되는 배열에서, 모든 객체는 val키와 입력 배열의 숫자를 값으로 가져야 합니다.
+function transformToObjects(numberArray) {
+    // Todo: Add your logic
+    // should return an array of objects
+    return numberArray.map(
+        item => {
+            return {val: item}
+        }
+    );
 }
-
-
-// 클래스는 인스턴스화가 이루어져야지 사용가능하다.
-const user1 = new User("Manuel", 35);
-console.log(user1);
-user1.greet()
