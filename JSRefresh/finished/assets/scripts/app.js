@@ -6,13 +6,15 @@
 
 //{,} 안에 ',' 로 구분하여 여러개의 변수를 가져올 수 있다.
 // as 를 사용하여 다른 이름으로 사용 가능.
-import {apiKey, abc as content} from "./util.js";
-
-console.log(apiKey);
-console.log(content);
+// import {apiKey, abc as content} from "./util.js";
+//
+// console.log(apiKey);
+// console.log(content);
 
 // 그룹으로 가져올 수 있다.
-import * as util from "./util.js";
+// import * as util from "./util.js";
+//
+// console.log(util.apiKey); //. 접근자로 그룹 import 변수 읽어오기
 
-console.log(util.apiKey); //. 접근자로 그룹 import 변수 읽어오기
+
 
