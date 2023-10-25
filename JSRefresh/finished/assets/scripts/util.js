@@ -32,4 +32,34 @@
 // }
 
 
+//객체
+let user = {
+    name: 'Max',
+    age: 27,
+    //객체안에 함수를 선언한다.
+    greet() {
+        console.log(this.name); // this 키워드를 통해 객체 내의 변수 접근
+    }
+};
+//점 표기법을 통해 객체에 접근한다.
+console.log(user.name);
+//객체의 함수 호출
+user.greet();
 
+//클래스. 클래스명 시작은 대문자로.
+class User {
+    //생성자
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    greet(){
+        console.log('Hi!');
+    }
+}
+
+
+// 클래스는 인스턴스화가 이루어져야지 사용가능하다.
+const user1 = new User("Manuel", 35);
+console.log(user1);
+user1.greet()
