@@ -121,20 +121,54 @@
 
 
 //스프레드 연산자.
-const hobbies = ["Sports", "Coocking"];
-const newHobbies = ['Reading'];
+// const hobbies = ["Sports", "Coocking"];
+// const newHobbies = ['Reading'];
+//
+// //const mergedHobbies = [hobbies, newHobbies];
+// // 배열의 요소를 하나의 배열로 합치기 위해서는 [,] 안에 '...' 연산자와 ','로 구분된 배열을 넣어줌.
+// const mergedHobbies = [...hobbies, ...newHobbies];
+//
+// //객체또한 '...' 연산자를 활용하여 통합 가능
+// const user = {
+//     name: "jaehoon",
+//     age: 27
+// };
+//
+// const extendedUser = {
+//     isAdmin: true,
+//     ...user // 스프레드 연산자.
+// }
 
-//const mergedHobbies = [hobbies, newHobbies];
-// 배열의 요소를 하나의 배열로 합치기 위해서는 [,] 안에 '...' 연산자와 ','로 구분된 배열을 넣어줌.
-const mergedHobbies = [...hobbies, ...newHobbies];
+//반복문
+// const hobbies = ["Sports", "Coocking"];
+//
+// for (const hobby of hobbies){
+//     console.log(hobby);
+// }
 
-//객체또한 '...' 연산자를 활용하여 통합 가능
-const user = {
-    name: "jaehoon",
-    age: 27
-};
 
-const extendedUser = {
-    isAdmin: true,
-    ...user // 스프레드 연산자.
+//함수를 값으로 사용하기
+function handleTimeout(){
+    console.log("Timed out!");
 }
+// 변수 저장 함수.
+const handletimeout2 = () => {
+    console.log("Timed out ... again!");
+}
+//내장 함수에 동작할 함수 정의
+setTimeout(
+    handleTimeout //함수에 함수를 전달할 떄는 바로 실행되지 않도록 ()를 붙이지 않는다.
+    , 2000
+);
+setTimeout(handletimeout2, 3000)
+// 익명함수로 전달하기.
+setTimeout(()=> {
+    console.log("More timing out...");
+}, 4000);
+
+//함수에 함수를 전달할 때 호출 시 넘겨줄 수 있다.
+function greeter(greetFn) {
+    greetFn();
+}
+//호출 시 함수 전달.
+greeter(() => console.log("Hi"));
