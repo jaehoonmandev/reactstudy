@@ -93,12 +93,29 @@
 // }));
 
 //새로 반환되는 배열에서, 모든 객체는 val키와 입력 배열의 숫자를 값으로 가져야 합니다.
-function transformToObjects(numberArray) {
-    // Todo: Add your logic
-    // should return an array of objects
-    return numberArray.map(
-        item => {
-            return {val: item}
-        }
-    );
-}
+// function transformToObjects(numberArray) {
+//     // Todo: Add your logic
+//     // should return an array of objects
+//     return numberArray.map(
+//         item => {
+//             return {val: item}
+//         }
+//     );
+// }
+
+
+//디스트럭처링
+//배열은 각 인덱스 요소와 맵핑되어 변수처럼 사용할 수 있게된다.
+const [firstName, lastName] = ['jaehoon', 'park'];
+
+console.log(firstName);
+console.log(lastName);
+
+// 객체 또한 디스트럭처링이 가능하며 변수명: 을 통해 as가 가능하다.
+const {name: userName, age} ={
+    name: "jaehoon",
+    age: 27
+};
+
+console.log(userName);
+console.log(age);
