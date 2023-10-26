@@ -1,6 +1,6 @@
 import './ExpenseItem.css'
 import ExpenseDate from "./ExpenseDate";
-import Card from "./Card";
+import Card from "../UI/Card";
 function ExpenseItem(
     // 하나하나 키 값을 주고 받아 왔을 떄 props.date 와 같이 사용하는 것이 아닌
     // 디스트럭처링을 통하여 바로 키 호출로 값을 불러올 수 있다.
