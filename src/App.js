@@ -1,6 +1,6 @@
 
 import ExpenseItem from "./components/ExpenseItem";
-
+import Expense from "./components/Expense";
 function App() {
     const expenses = [
         {
@@ -27,28 +27,7 @@ function App() {
     // 기존의 JS는 document.createElement/getElementById 와 같이 지정하지만.
     // 리액트는 이 작업을 직접 지정하지 않는다.
   return (
-    <div>
-        <h2>Let's get started!</h2>
-        <p>This is also visible!</p>
-        <ExpenseItem
-            /*title={expenses[0].title}
-            amount={expenses[0].amount}
-            date={expenses[0].date}*/
-            expense={expenses[0]}
-        ></ExpenseItem>
-        <ExpenseItem
-            /*title={expenses[0].title}
-            amount={expenses[0].amount}
-            date={expenses[0].date}*/
-            expense={expenses[1]}
-        ></ExpenseItem>
-        <ExpenseItem
-            /*title={expenses[0].title}
-            amount={expenses[0].amount}
-            date={expenses[0].date}*/
-            expense={expenses[2]}
-        ></ExpenseItem>
-    </div>
+        <Expense expense={expenses}></Expense>
   );
 }
 
