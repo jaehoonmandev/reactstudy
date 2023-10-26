@@ -152,6 +152,7 @@ function handleTimeout(){
     console.log("Timed out!");
 }
 // 변수 저장 함수.
+/*
 const handletimeout2 = () => {
     console.log("Timed out ... again!");
 }
@@ -171,4 +172,16 @@ function greeter(greetFn) {
     greetFn();
 }
 //호출 시 함수 전달.
-greeter(() => console.log("Hi"));
+greeter(() => console.log("Hi"));*/
+
+
+//함수안에 함수 호출하기
+// function init() {
+//     function greet() {
+//         console.log('Hi!');
+//     }
+//     greet(); // 함수안에 선언된 함수는 해당 부모 함수 내에서만 실행 가능하다.
+// }
+// init();
+
+
