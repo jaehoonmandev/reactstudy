@@ -12,13 +12,12 @@ function ExpenseItem(
 
 ) {
     // 이벤트로 인한 변경을 재평가 하기 위한 함수.
-    // useState(props.expense.title) 파라미터 안에 초기값을 지정.
+    // useState(props.expense.title) 아규먼트 안에 초기값을 지정.
     // 요소의 [초기값을 사용할 변수명, 이벤트에 동작할 함수 이름]을 지정한다.
     const [title, setTitle] = useState(props.expense.title);
 
     const clickHandler = () => {
         setTitle('Updated');
-        console.log('updated')
     }
     return (
         <div className="expense-item">
