@@ -58,8 +58,22 @@ const ExpenseForm = () => {
       }
     };*/
 
+    /*form이 제출될 때 이벤트를 리스닝.*/
+    const submitHandler = (event) => {
+        event.preventDefault();// JS 기본 기능을 비활성화여 페이지가 새로고침 되지 않고 값을 처리할 수 있다.
+
+        const expenseDate = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date : new Date(enteredDate) // 형식 변경.
+        };
+
+        console.log(expenseDate);
+    }
+
     return (
-        <form>
+        /*form이 제출될 때 이벤트를 리스닝.*/
+        <form onSubmit={submitHandler}>
             <div className={"new-expense__controls"}>
                 <div className={"new-expense__control"}>
                     <label> Title </label>
@@ -85,7 +99,7 @@ const ExpenseForm = () => {
             </div>
             {/*양식 제출*/}
             <div className={"new-expense__actions"}>
-                <button type={"submit"}> Add Expense </button>
+                <button type={"submit"} > Add Expense </button>
             </div>
         </form>
     );
