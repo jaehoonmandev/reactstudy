@@ -1,6 +1,8 @@
 
-import ExpenseItem from "./components/Expense/ExpenseItem";
 import Expense from "./components/Expense/Expense";
+import ExpenseForm from "./components/NewExpense/ExpenseForm";
+import NewExpense from "./components/NewExpense/NewExpense";
+
 function App() {
     const expenses = [
         {
@@ -27,7 +29,10 @@ function App() {
     // 기존의 JS는 document.createElement/getElementById 와 같이 지정하지만.
     // 리액트는 이 작업을 직접 지정하지 않는다.
   return (
-        <Expense expense={expenses}></Expense>
+      <div>
+          <NewExpense></NewExpense>
+          <Expense expense={expenses}></Expense>
+      </div>
   );
 }
 
