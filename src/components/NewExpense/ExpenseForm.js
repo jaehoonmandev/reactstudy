@@ -67,8 +67,10 @@ const ExpenseForm = () => {
             amount: enteredAmount,
             date : new Date(enteredDate) // 형식 변경.
         };
-
-        console.log(expenseDate);
+        //양반향 바인딩을통한 초기화
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
     }
 
     return (
@@ -77,7 +79,9 @@ const ExpenseForm = () => {
             <div className={"new-expense__controls"}>
                 <div className={"new-expense__control"}>
                     <label> Title </label>
-                    <input type={"text"} onChange={titleChangeHandler}/>
+                    <input type={"text"}
+                            value={enteredTitle}   /*양반향 초기화 값이 적용될 수 있도록 지정한다.*/
+                           onChange={titleChangeHandler}/>
                     {/* 이벤트 발생 시 객체 핸들링을하기 위해 익명 함수를 랩핑한다.*/}
                     {/*onChange 이벤트 발생시 event 객체를 이용하여 핸들러에 값을 제공할 수 있다.*/}
                     {/*<input type={"text"}
@@ -88,12 +92,14 @@ const ExpenseForm = () => {
                     <label> Amount </label>
                     <input
                         type={"number"} min={"0.01"} step={"0.01"}
+                        value={enteredAmount}
                         onChange={amountChangeHandler}/>
                 </div>
                 <div className={"new-expense__control"}>
                     <label> Date </label>
                     <input
                         type={"date"} min={"2023-10-31"} max={"2023-12-31"}
+                        value={enteredDate}
                         onChange={dateChangeHandler}/>
                 </div>
             </div>
