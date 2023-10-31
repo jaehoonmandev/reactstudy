@@ -1,8 +1,10 @@
-import ExpenseItem from "./ExpenseItem";
+
 import './Expenses.css'
 import ExpensesFilter from "./ExpensesFilter";
 import {useState} from "react";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
+
 function Expense(props){
 
     const[filterYear, setFilteredYear] = useState('2023');
@@ -21,6 +23,7 @@ function Expense(props){
                     selected={filterYear}
                     onChangeFilter={filterChangeHandler}
                 ></ExpensesFilter>
+                <ExpensesChart expenses = {filteredExpenses}></ExpensesChart>
                 {/*아이템의 유무에 따른 조건부 데이터 노출*/}
                 <ExpensesList items = {filteredExpenses} />
             </div>

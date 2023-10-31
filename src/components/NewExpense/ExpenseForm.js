@@ -65,7 +65,7 @@ const ExpenseForm = (props) => {
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date : new Date(enteredDate) // 형식 변경.
         };
         // 부모 컴포넌트에서 전달한 포인터 메서드 실행.

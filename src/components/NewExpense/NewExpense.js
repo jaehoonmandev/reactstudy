@@ -4,7 +4,7 @@ import ExpenseForm from "./ExpenseForm";
 import './NewExpense.css'
 const NewExpense = (props) => {
 
-    const [isEditing, setIsEditing] = useState(false);
+
 
     const saveExpenseDataHandler = (enterdExpenseData) => {
           const expenseData = {
@@ -14,6 +14,8 @@ const NewExpense = (props) => {
           //부모에게 넘겨주기.
           props.onAddExpense(expenseData);
     };
+
+    const [isEditing, setIsEditing] = useState(false);
 
     const startEditingHandler = ()  => {
         setIsEditing(true);
