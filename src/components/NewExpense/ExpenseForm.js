@@ -110,6 +110,7 @@ const ExpenseForm = (props) => {
             </div>
             {/*양식 제출*/}
             <div className={"new-expense__actions"}>
+                <button onClick={props.endEditingHandler}> Cancel </button>
                 <button type={"submit"} > Add Expense </button>
             </div>
         </form>

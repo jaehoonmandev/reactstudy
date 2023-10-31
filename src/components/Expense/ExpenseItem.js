@@ -21,21 +21,22 @@ function ExpenseItem(
         setTitle('Updated');
     }
     return (
-        <div className="expense-item">
-            {/*<div>{date.toISOString()}</div>*/}
-            {/*<div>{props.expense.date.toISOString()}</div>*/}
-            {/*컴포넌트화 한 ExpenseDate로 props를 넘겨주고 JSX 를 return 받는다.*/}
-
-            {/*부모 컴포넌트안에 자식 컴포넌트를 지정한다.*/}
-            <Card className="expense-item__description">
-                <h2>{title}</h2>
-                <ExpenseDate date={props.expense.date}></ExpenseDate>
-                {/*<div className="expense-item__price">${amount}</div>*/}
-                <div className="expense-item__price">${props.expense.amount}</div>
-                {/*클릭 이벤트 버튼 요소 추가*/}
-                <button onClick={clickHandler}>Change Title</button>
-            </Card>
-        </div>
+        <li>
+            <div className="expense-item">
+                {/*<div>{date.toISOString()}</div>*/}
+                {/*<div>{props.expense.date.toISOString()}</div>*/}
+                {/*컴포넌트화 한 ExpenseDate로 props를 넘겨주고 JSX 를 return 받는다.*/}
+                {/*부모 컴포넌트안에 자식 컴포넌트를 지정한다.*/}
+                <Card className="expense-item__description">
+                    <h2>{title}</h2>
+                    <ExpenseDate date={props.expense.date}></ExpenseDate>
+                    {/*<div className="expense-item__price">${amount}</div>*/}
+                    <div className="expense-item__price">${props.expense.amount}</div>
+                    {/*클릭 이벤트 버튼 요소 추가*/}
+                    <button onClick={clickHandler}>Change Title</button>
+                </Card>
+            </div>
+        </li>
     );
 }
 
