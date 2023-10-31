@@ -10,7 +10,7 @@ function App() {
             id: 'e1',
             title:'Toliet Paper' ,
             amount: 94.12,
-            date: new Date(2023, 10,25)
+            date: new Date(2022, 10,25)
         },
         {
             id: 'e2',
