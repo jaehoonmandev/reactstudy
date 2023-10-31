@@ -5,17 +5,17 @@ const ExpenseForm = () => {
     // 재평가 되어도 값을 유지 하기 위해.
     // 값은 컴포넌트안에 여러개의 State가 있는건 정상이다.
     // 값이 넘어올 때는 항상 String이 때문에 String으로 초기화 된다.
-    // const [enteredTitle, setEnteredTitle] = useState('');
-    // const [enteredAmount, setEnteredAmount] = useState('');
-    // const [enteredDate, setEnteredDate] = useState('');
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
 
 
     //이벤트를 하나의 State로 묶어서 관리할 수 있다.
-    const [userInput, setUserInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: ''
-    });
+    // const [userInput, setUserInput] = useState({
+    //     enteredTitle: '',
+    //     enteredAmount: '',
+    //     enteredDate: ''
+    // });
     const titleChangeHandler = (event) => {
         // 업데이트하려는 값을 수동으로 지정해준다.
         // setUserInput({
@@ -26,23 +26,37 @@ const ExpenseForm = () => {
         // 이전 상태에 의존할 때 올바른 이전 상태를 참고하기 위해 새로운 객체를 넘겨준다.
         // 리액트는 상태 업데이트를 보존하고 즉시 수행하지 않기 때문에 올바른 스냅샷에 의존하지 않을 수 있다.
         // 최신 스냅샷을 유지하기 위해서 아래와 같이 안전한 방법을 쓴다.
-        setUserInput((prevState) => {
-            return {...prevState, enteredTitle: event.target.value};
-        });
+        // setUserInput((prevState) => {
+        //     return {...prevState, enteredTitle: event.target.value};
+        // });
+        setEnteredTitle(event.target.value);
 
     };
     const amountChangeHandler = event => {
         // setUserInput({
         //     ...userInput,
         //     enteredAmount: event.target.value
-        // });
+        // }
+        setEnteredAmount(event.target.value);
     };
     const dateChangeHandler = (event) => {
         // setUserInput({
         //     ...userInput,
         //     enteredDate: event.target.value
         // });
+        setEnteredDate(event.target.value);
     };
+
+    //여러개의 핸들러를 한 번에 제어하기 위한 핸들러
+    /*const inputChangeHander = (identifier, value) => {
+      if(identifier === 'title'){
+          setEnteredTitle(value);
+      }  else if (identifier === 'date'){
+          setEnteredDate(value);
+      } else {
+          setEnteredAmount(value);
+      }
+    };*/
 
     return (
         <form>
@@ -50,6 +64,11 @@ const ExpenseForm = () => {
                 <div className={"new-expense__control"}>
                     <label> Title </label>
                     <input type={"text"} onChange={titleChangeHandler}/>
+                    {/* 이벤트 발생 시 객체 핸들링을하기 위해 익명 함수를 랩핑한다.*/}
+                    {/*onChange 이벤트 발생시 event 객체를 이용하여 핸들러에 값을 제공할 수 있다.*/}
+                    {/*<input type={"text"}
+                           onChange={
+                        (event)=> inputChangeHander('title', event.target.value) }/>*/}
                 </div>
                 <div className={"new-expense__control"}>
                     <label> Amount </label>
