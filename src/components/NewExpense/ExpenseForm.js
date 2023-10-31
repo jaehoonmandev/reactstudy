@@ -18,23 +18,30 @@ const ExpenseForm = () => {
     });
     const titleChangeHandler = (event) => {
         // 업데이트하려는 값을 수동으로 지정해준다.
-        setUserInput({
-            ...userInput, // 다른 값들을 유지하기 위해 모든 key-value를 가져와 새 객체에 추가.
-            enteredTitle: event.target.value
+        // setUserInput({
+        //     ...userInput, // 다른 값들을 유지하기 위해 모든 key-value를 가져와
+        //     enteredTitle: event.target.value// 특정한 키를 지정하여 새 객체에 추가.
+        // });
+
+        // 이전 상태에 의존할 때 올바른 이전 상태를 참고하기 위해 새로운 객체를 넘겨준다.
+        // 리액트는 상태 업데이트를 보존하고 즉시 수행하지 않기 때문에 올바른 스냅샷에 의존하지 않을 수 있다.
+        // 최신 스냅샷을 유지하기 위해서 아래와 같이 안전한 방법을 쓴다.
+        setUserInput((prevState) => {
+            return {...prevState, enteredTitle: event.target.value};
         });
 
     };
     const amountChangeHandler = event => {
-        setUserInput({
-            ...userInput, // 다른 값들을 유지하기 위해 모든 key-value를 가져와 새 객체에 추가.
-            enteredAmount: event.target.value
-        });
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmount: event.target.value
+        // });
     };
     const dateChangeHandler = (event) => {
-        setUserInput({
-            ...userInput, // 다른 값들을 유지하기 위해 모든 key-value를 가져와 새 객체에 추가.
-            enteredDate: event.target.value
-        });
+        // setUserInput({
+        //     ...userInput,
+        //     enteredDate: event.target.value
+        // });
     };
 
     return (
