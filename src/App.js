@@ -1,6 +1,5 @@
 
 import Expense from "./components/Expense/Expense";
-import ExpenseForm from "./components/NewExpense/ExpenseForm";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
@@ -26,11 +25,18 @@ function App() {
 
     ];
 
+    //자식의 자식이 넘겨준 데이터 핸들링하기.
+    const addExpenseHandler = (expense) => {
+        console.log('In App.js');
+        console.log(expense)
+    }
+
     // 기존의 JS는 document.createElement/getElementById 와 같이 지정하지만.
     // 리액트는 이 작업을 직접 지정하지 않는다.
   return (
       <div>
-          <NewExpense></NewExpense>
+          {/*자식에데 데이터를 넘겨 받을 속성(포인터) 추가*/}
+          <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
           <Expense expense={expenses}></Expense>
       </div>
   );

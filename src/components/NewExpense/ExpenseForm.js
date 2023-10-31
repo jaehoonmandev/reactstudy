@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 
 import './ExpenseForm.css'
-const ExpenseForm = () => {
+// 부모컴포넌트에서 onSaveExpenseData의 속성을 넘겼으니 props 파라미터 사용가능.
+const ExpenseForm = (props) => {
     // 재평가 되어도 값을 유지 하기 위해.
     // 값은 컴포넌트안에 여러개의 State가 있는건 정상이다.
     // 값이 넘어올 때는 항상 String이 때문에 String으로 초기화 된다.
@@ -62,11 +63,15 @@ const ExpenseForm = () => {
     const submitHandler = (event) => {
         event.preventDefault();// JS 기본 기능을 비활성화여 페이지가 새로고침 되지 않고 값을 처리할 수 있다.
 
-        const expenseDate = {
+        const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
             date : new Date(enteredDate) // 형식 변경.
         };
+        // 부모 컴포넌트에서 전달한 포인터 메서드 실행.
+        // 객체화한 데이터를 부모 컴포넌트로 넘긴다.
+        props.onSaveExpenseData(expenseData);
+
         //양반향 바인딩을통한 초기화
         setEnteredTitle('');
         setEnteredAmount('');
