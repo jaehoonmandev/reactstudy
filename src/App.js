@@ -1,9 +1,11 @@
-
+import React, {useState} from "react";
 import Expense from "./components/Expense/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-    const expenses = [
+
+    // 초기 배열 설정.
+    const DUMMY_EXPENSES = [
         {
             id: 'e1',
             title:'Toliet Paper' ,
@@ -25,10 +27,13 @@ function App() {
 
     ];
 
+    // 배열에 변화를 주기위한 State
+    const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+
     //자식의 자식이 넘겨준 데이터 핸들링하기.
     const addExpenseHandler = (expense) => {
-        console.log('In App.js');
-        console.log(expense)
+        setExpenses((prevExpenses) =>
+            [expense, ...prevExpenses]);// 넘겨 받은 배열을 스프레드 연산자를 통해 합친다.
     }
 
     // 기존의 JS는 document.createElement/getElementById 와 같이 지정하지만.

@@ -2,6 +2,7 @@ import './ExpenseItem.css'
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
+import ExpensesFilter from "./ExpensesFilter";
 //동작을 재정의하기 위한 특정 라이브러리를 가져온다.
 import React, {useState } from "react";
 function ExpenseItem(
@@ -24,7 +25,6 @@ function ExpenseItem(
             {/*<div>{date.toISOString()}</div>*/}
             {/*<div>{props.expense.date.toISOString()}</div>*/}
             {/*컴포넌트화 한 ExpenseDate로 props를 넘겨주고 JSX 를 return 받는다.*/}
-
 
             {/*부모 컴포넌트안에 자식 컴포넌트를 지정한다.*/}
             <Card className="expense-item__description">
