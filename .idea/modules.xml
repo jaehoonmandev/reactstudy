@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/componentspractice.iml" filepath="$PROJECT_DIR$/componentspractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamic_style.iml" filepath="$PROJECT_DIR$/dynamic_style.iml" />
+      <module fileurl="file://$PROJECT_DIR$/investment_calculator.iml" filepath="$PROJECT_DIR$/investment_calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/react_debugging.iml" filepath="$PROJECT_DIR$/react_debugging.iml" />
       <module fileurl="file://$PROJECT_DIR$/../reactstudy.iml" filepath="$PROJECT_DIR$/../reactstudy.iml" />
     </modules>
   </component>
