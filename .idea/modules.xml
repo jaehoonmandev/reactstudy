@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/add_user.iml" filepath="$PROJECT_DIR$/add_user.iml" />
       <module fileurl="file://$PROJECT_DIR$/componentspractice.iml" filepath="$PROJECT_DIR$/componentspractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamic_style.iml" filepath="$PROJECT_DIR$/dynamic_style.iml" />
       <module fileurl="file://$PROJECT_DIR$/investment_calculator.iml" filepath="$PROJECT_DIR$/investment_calculator.iml" />
