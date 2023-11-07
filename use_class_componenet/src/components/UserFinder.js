@@ -20,7 +20,11 @@ class UserFinder extends Component{
 
 
   componentDidMount() {
-    this.setState({filteredUsers : DUMMY_USERS})
+    if(DUMMY_USERS.length !==0){
+      this.setState({filteredUsers : DUMMY_USERS})
+    }else{
+      throw new Error('NO USERS')
+    }
   }
 
   // 상태 변화로인한 재평가가 되면 자동으로 호출 (useEffect 대체)
