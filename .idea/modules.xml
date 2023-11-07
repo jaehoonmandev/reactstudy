@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/investment_calculator.iml" filepath="$PROJECT_DIR$/investment_calculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/react_debugging.iml" filepath="$PROJECT_DIR$/react_debugging.iml" />
       <module fileurl="file://$PROJECT_DIR$/../reactstudy.iml" filepath="$PROJECT_DIR$/../reactstudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/request_http.iml" filepath="$PROJECT_DIR$/request_http.iml" />
       <module fileurl="file://$PROJECT_DIR$/use_class_componenet.iml" filepath="$PROJECT_DIR$/use_class_componenet.iml" />
       <module fileurl="file://$PROJECT_DIR$/use_effect.iml" filepath="$PROJECT_DIR$/use_effect.iml" />
     </modules>
