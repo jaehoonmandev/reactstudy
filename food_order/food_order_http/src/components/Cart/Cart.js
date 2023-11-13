@@ -30,19 +30,19 @@ const Cart = (props) => {
     setIsCheckOut(isCheckOut => !isCheckOut);
   }
 
-  //전송을 눌렀을 시
+  //전송을 눌렀을 시 POST로 데이터 전송 후 저장.
   const submitOrderHandler = (userData)=> {
     setIsSubmitting(true);
     fetch('https://react-http-9004e-default-rtdb.firebaseio.com/order.json',{
       method: 'POST',
       body: JSON.stringify({
-        user: userData,
-        orderedItems: cartCtx.items
+        user: userData, // 유저의 주소 입력 정보
+         orderedItems: cartCtx.items// 장바구니에 아이템을 넣을 때 컨텍스트에 넣었기 떄문에.
       })
     })
     setIsSubmitting(false);
     setDidSubmit(true);
-    cartCtx.clearCart(); // 컨텍스트 비우기.
+    cartCtx.clearCart(); //컨텍스트 비우기.
   }
 
 
