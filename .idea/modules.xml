@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/investment_calculator.iml" filepath="$PROJECT_DIR$/investment_calculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/redux_react/more_detail.iml" filepath="$PROJECT_DIR$/redux_react/more_detail.iml" />
       <module fileurl="file://$PROJECT_DIR$/react_debugging.iml" filepath="$PROJECT_DIR$/react_debugging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/react_routing_spa_page.iml" filepath="$PROJECT_DIR$/react_routing_spa_page.iml" />
       <module fileurl="file://$PROJECT_DIR$/../reactstudy.iml" filepath="$PROJECT_DIR$/../reactstudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/redux_react.iml" filepath="$PROJECT_DIR$/redux_react.iml" />
       <module fileurl="file://$PROJECT_DIR$/request_http.iml" filepath="$PROJECT_DIR$/request_http.iml" />
