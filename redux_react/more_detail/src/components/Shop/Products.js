@@ -24,6 +24,7 @@ const Products = (props) => {
           {DUMMY_PRODUCTS.map(
                   item=> (
                   <ProductItem
+                      key={item.id}
                       id={item.id}
                       title={item.title}
                       price={item.price}
