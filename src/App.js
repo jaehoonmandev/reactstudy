@@ -33,8 +33,8 @@ function App() {
     //자식의 자식이 넘겨준 데이터 핸들링하기.
     const addExpenseHandler = (expense) => {
         setExpenses((prevExpenses) =>
-            [expense, ...prevExpenses]);// 넘겨 받은 배열을 스프레드 연산자를 통해 합친다.
-    }
+            [expense, ...prevExpenses]);
+    }// 넘겨 받은 배열을 스프레드 연산자를 통해 합친다.
 
     // 기존의 JS는 document.createElement/getElementById 와 같이 지정하지만.
     // 리액트는 이 작업을 직접 지정하지 않는다.
