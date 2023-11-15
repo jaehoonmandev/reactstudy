@@ -7,7 +7,7 @@ import Products from './components/Shop/Products';
 import Cart from './components/Cart/Cart';
 
 import Notification from "./components/UI/Notification";
-import {sendCartData} from "./store/cart-slice";
+import {sendCartData, fetchCartData} from "./store/cart-actions";
 
 let isInitial = true
 
@@ -17,13 +17,22 @@ function App() {
     const cart = useSelector(state => state.cart) //useSelector로 리덕스 구독 설정
     const notification = useSelector(state => state.ui.notification)
 
+        useEffect(() => {
+            dispatch(fetchCartData());
+        }, [dispatch])
+
     useEffect(() => {
 
         if(isInitial){
             isInitial=false
             return;
         }
-        dispatch(sendCartData(cart));
+
+        if(cart.changed){
+            dispatch(sendCartData(cart));
+        }
+
+
 
     }, [cart,dispatch]);//구독한 데이터가 바뀔 때 마다
     return (<Fragment>
