@@ -1,10 +1,10 @@
-import {useNavigate, Form, useNavigation, useActionData} from 'react-router-dom';
+import {useNavigate, Form, useNavigation, useActionData, json, redirect} from 'react-router-dom';
 
 import classes from './EventForm.module.css';
 
 function EventForm({method, event}) {
     //loader에 의한 리턴이 아닌 action에 의한 리턴.
-    // action이 정의된 페이지 컴포넌트에 의해 렌더링 되기에 사용가능.
+    //action이 정의된 페이지 컴포넌트에 의해 렌더링 되기에 사용가능.
     const data = useActionData();
 
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ function EventForm({method, event}) {
     }
 
     return (
-        <Form method={'POST'} className={classes.form}>
+        <Form method={method} className={classes.form}>
             {data && data.errors &&
                 <ul>
                     {
@@ -60,3 +60,38 @@ function EventForm({method, event}) {
             }
 
 export default EventForm;
+
+export async function action({request, params}) {
+    const method = request.method; // 유동적인 요청을 보내기 위해.
+    const data = await request.formData(); // <Form> 에 있는 값들을 읽어온다.
+
+    const eventData = {
+        title: data.get('title'),
+        image: data.get('image'),
+        date: data.get('date'),
+        description: data.get('description'),
+    }
+
+    let url = 'http://localhost:8080/events';
+
+    if(method === 'PATCH'){
+        const eventId = params.eventId;
+        url = 'http://localhost:8080/events/' + eventId
+    }
+    const response = await fetch(url,{
+        method: method,
+        headers: {
+            'Content-Type': 'application/json' //json 형식으로 데이터 전송.
+        },
+        body : JSON.stringify(eventData)
+    })
+
+    if(response.status === 422){ // 서버측에서 보낸 에러 메시지 핸들링
+        return response;
+    }
+
+    if(!response.ok){
+        throw json({message: 'Could not save Event'}, {status:500});
+    }
+    return redirect('/events') // 리다이렉트
+}
