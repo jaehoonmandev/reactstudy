@@ -24,6 +24,10 @@ export async function action({request, params}) {
         body : JSON.stringify(eventData)
     })
 
+    if(response.status === 422){ // 서버측에서 보낸 에러 메시지 핸들링
+        return response;
+    }
+
     if(!response.ok){
         throw json({message: 'Could not save Event'}, {status:500});
     }
