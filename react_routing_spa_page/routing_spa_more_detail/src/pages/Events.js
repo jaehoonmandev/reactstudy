@@ -5,7 +5,7 @@ import {Suspense} from "react";
 
 function EventsPage() {
   //const events = useLoaderData();//async - await 를 사용했기에 promise
-    const data = events.events; // fetch에서 return하는 response는 다양한 객체를 가진다.
+    //const data = events.events; // fetch에서 return하는 response는 다양한 객체를 가진다.
 
 
     const {events} =useLoaderData();
@@ -34,7 +34,7 @@ async function loadEvents(){
         //  throw new Response(JSON.stringify(
         //      {message :'Could not fetch events' }),
         //      {status: 500})
-        return json({messgae: 'Could not fetch events.'},
+        return json({messagae: 'Could not fetch events.'},
             {status: 500});
     } else {
         // return response;
