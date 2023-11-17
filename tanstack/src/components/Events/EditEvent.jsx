@@ -54,11 +54,11 @@ export default function EditEvent() {
 
     let content;
 
-    if (isPending) {
-        content = <div className={'center'}>
-            <LoadingIndicator/>
-        </div>
-    }
+    // if (isPending) {
+    //     content = <div className={'center'}>
+    //         <LoadingIndicator/>
+    //     </div>
+    // }
 
     if (isError) {
         content =
@@ -89,4 +89,13 @@ export default function EditEvent() {
             {content}
         </Modal>
     );
+}
+
+
+export function loader({params}) {
+    return queryClient.fetchQuery({ // useQuery 훅을 사용하지 않고 직접 불러온다.
+        queryKey: ['events', params.id],
+        queryFn: ({signal}) =>
+            fetchEvent({signal, id: params.id})
+    })
 }
