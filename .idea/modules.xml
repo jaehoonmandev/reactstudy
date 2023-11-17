@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/authentication.iml" filepath="$PROJECT_DIR$/authentication.iml" />
       <module fileurl="file://$PROJECT_DIR$/componentspractice.iml" filepath="$PROJECT_DIR$/componentspractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/custom_hook.iml" filepath="$PROJECT_DIR$/custom_hook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deployment.iml" filepath="$PROJECT_DIR$/deployment.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamic_style.iml" filepath="$PROJECT_DIR$/dynamic_style.iml" />
       <module fileurl="file://$PROJECT_DIR$/food_order.iml" filepath="$PROJECT_DIR$/food_order.iml" />
       <module fileurl="file://$PROJECT_DIR$/food_order/food_order_http.iml" filepath="$PROJECT_DIR$/food_order/food_order_http.iml" />
@@ -21,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/request_http_post.iml" filepath="$PROJECT_DIR$/request_http_post.iml" />
       <module fileurl="file://$PROJECT_DIR$/react_routing_spa_page/routing_more_detail/frontend/routing_more_detail_frontend.iml" filepath="$PROJECT_DIR$/react_routing_spa_page/routing_more_detail/frontend/routing_more_detail_frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/react_routing_spa_page/routing_spa_more_detail.iml" filepath="$PROJECT_DIR$/react_routing_spa_page/routing_spa_more_detail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tanstack.iml" filepath="$PROJECT_DIR$/tanstack.iml" />
       <module fileurl="file://$PROJECT_DIR$/use_class_componenet.iml" filepath="$PROJECT_DIR$/use_class_componenet.iml" />
       <module fileurl="file://$PROJECT_DIR$/use_effect.iml" filepath="$PROJECT_DIR$/use_effect.iml" />
       <module fileurl="file://$PROJECT_DIR$/custom_hook/with_http.iml" filepath="$PROJECT_DIR$/custom_hook/with_http.iml" />
