@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/investment_calculator.iml" filepath="$PROJECT_DIR$/investment_calculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/redux_react/more_detail.iml" filepath="$PROJECT_DIR$/redux_react/more_detail.iml" />
       <module fileurl="file://$PROJECT_DIR$/next_js.iml" filepath="$PROJECT_DIR$/next_js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/next_js/next_js_detail.iml" filepath="$PROJECT_DIR$/next_js/next_js_detail.iml" />
       <module fileurl="file://$PROJECT_DIR$/react_debugging.iml" filepath="$PROJECT_DIR$/react_debugging.iml" />
       <module fileurl="file://$PROJECT_DIR$/react_routing_spa_page.iml" filepath="$PROJECT_DIR$/react_routing_spa_page.iml" />
       <module fileurl="file://$PROJECT_DIR$/../reactstudy.iml" filepath="$PROJECT_DIR$/../reactstudy.iml" />
