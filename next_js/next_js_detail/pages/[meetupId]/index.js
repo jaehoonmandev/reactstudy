@@ -35,7 +35,8 @@ export async function getStaticPaths(){
     client.close()
 
     return{
-        fallback: false, //false: 지정한 것만, true: 동적으로 생성.
+        fallback: 'blocking', //false: 지정한 것만, block/true: 동적으로 생성
+        //true: 빈페이지 즉시 반환, 동적 생성컨텐츠 풀다운, block: 반환되기 전까지 페이지 표시 안함.
         // 인기 있는 몇개의 페이지만 사전 렌더링 하고 싶다면 false도 고려
         paths: meetups.map(meetup => ({
             params: {
