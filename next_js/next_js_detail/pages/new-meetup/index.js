@@ -2,6 +2,7 @@ import {Fragment} from "react";
 import NewMeetupForm from "@/components/meetups/NewMeetupForm";
 import Layout from "@/components/layout/Layout";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 
 function NewMeetupPage(){
@@ -21,8 +22,14 @@ function NewMeetupPage(){
         router.push('/');
     }
     return (
+        <Fragment>
+            <Head>
+                <title>New Meetups</title>
+                <meta name='description' content={'Browse a huge list of...'}/>
+            </Head>
+            <NewMeetupForm onAddMeetup={addMeetUpHandler} />
+        </Fragment>
 
-          <NewMeetupForm onAddMeetup={addMeetUpHandler} />
 
     );
 }
